@@ -1,12 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const listItems = document.getElementsByTagName("li");
-
-    Array.from(listItems).forEach(item => {
-        const h2 = item.getElementsByTagName("h2")[0];
-
-        if (h2) {
-            h2.innerText = h2.innerText.toUpperCase();
-            h2.classList.add("car-model");
-        }
-    });
+    const board = document.getElementById("board");
+    const gameGrid = createTable(7, 7)
+    board.appendChild(gameGrid);
 });
+
+function createTable(numRows, numCols) {
+    const table = document.createElement("table");
+
+    for (let i = 0; i < numRows; i++) {
+        const row = document.createElement("tr");
+        table.appendChild(row);
+
+        for (let j = 0; j < numCols; j++) {
+            const col = document.createElement("td");
+            row.appendChild(col);
+        }
+    }
+
+    return table;
+}
