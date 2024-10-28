@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const numCols = 7;
     const gameGrid = createTable(numRows, numCols);
 
-    if (!gameGrid) throw new Error(
-        "Could not create the game grid"
-    );
-
     board.appendChild(gameGrid);
 });
 
